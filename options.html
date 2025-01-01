@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Copy Tab URL - Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #4b5a87;
+      color: #ffffff;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: inherit;
+    }
+    input[type="text"], input[type="number"] {
+      width: 200px;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      color: #000000;
+    }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+      color: inherit;
+    }
+    #save-button {
+      background-color: #4b5a87;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    #save-button:hover {
+      background-color: #3a466d;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: inherit;
+    }
+    p {
+      margin: 5px 0;
+      color: inherit;
+    }
+    #save-message {
+      margin-left: 10px;
+      font-weight: bold;
+      color: inherit;
+    }
+    /* Icon preview style */
+    #icon-preview {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Extension Options</h1>
+
+  <div class="section">
+    <label for="theme-color">Theme Color (Hex Code):</label>
+    <input type="text" id="theme-color" placeholder="#4b5a87">
+  </div>
+
+  <div class="section">
+    <label for="icon-color">Icon Color (Hex Code):</label>
+    <input type="text" id="icon-color" placeholder="#ffffff">
+    <img id="icon-preview" src="" alt="Preview of the icon color">
+  </div>
+
+  <div class="section">
+    <label for="popup-timeout">Popup Timeout (milliseconds, 0 for no popup):</label>
+    <input type="number" id="popup-timeout" min="0" placeholder="2500">
+  </div>
+
+  <div class="section">
+    <label>Default Action on Icon Click:</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="default-action" value="full-url" checked> Copy Full URL
+      </label>
+      <label>
+        <input type="radio" name="default-action" value="base-url"> Copy Base URL
+      </label>
+    </div>
+  </div>
+
+  <div class="section">
+    <label>
+      <input type="checkbox" id="show-urlbar-icon">
+      Show icon in URL bar
+    </label>
+  </div>
+
+  <div class="section">
+    <h2>Keyboard Shortcut</h2>
+    <p>The default shortcut is <strong>Ctrl+Shift+C</strong>.</p>
+    <p>
+      To change it, please open Firefox Add-ons Manager (about:addons) and click:
+      <br><em>Gear Icon → Manage Extension Shortcuts</em>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Instructions</h2>
+    <p>- Click the extension icon to copy the URL of the current tab.</p>
+    <p>- To copy the URL of a different tab: Right-click on a tab in the sidebar and select "Copy Tab URL".</p>
+    <p>- To add the icon to your toolbar:</p>
+    <ol style="margin-left: 1.5em;">
+      <li>Click on the extensions dropdown on the toolbar.</li>
+      <li>Right-click the "Copy Tab URL" extension and choose "Pin to Toolbar".</li>
+      <li>(Optional) To move the icon to a different position, right-click the toolbar and choose "Customize Toolbar". Then drag the icon wherever you want.</li>
+    </ol>
+  </div>
+
+  <button id="save-button">Save</button>
+  <span id="save-message"></span>
+
+  <script src="options.js"></script>
+</body>
+</html>
